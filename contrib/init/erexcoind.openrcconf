@@ -1,0 +1,33 @@
+# /etc/conf.d/erexcoind: config file for /etc/init.d/erexcoind
+
+# Config file location
+#EREXCOIND_CONFIGFILE="/etc/erexcoin/erexcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $EREXCOIND_USER)
+#EREXCOIND_PIDDIR="/var/run/erexcoind"
+
+# What filename to give the pidfile
+#EREXCOIND_PIDFILE="${EREXCOIND_PIDDIR}/erexcoind.pid"
+
+# Where to write erexcoind data (be mindful that the blockchain is large)
+#EREXCOIND_DATADIR="/var/lib/erexcoind"
+
+# User and group to own erexcoind process
+#EREXCOIND_USER="erexcoin"
+#EREXCOIND_GROUP="erexcoin"
+
+# Path to erexcoind executable
+#EREXCOIND_BIN="/usr/bin/erexcoind"
+
+# Nice value to run erexcoind under
+#EREXCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#EREXCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for erexcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+EREXCOIND_SIGTERM_TIMEOUT=60

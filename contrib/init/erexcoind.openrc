@@ -1,0 +1,92 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/erexcoin/.erexcoin" ]; then
+	EREXCOIND_DEFAULT_DATADIR="/var/lib/erexcoin/.erexcoin"
+else
+	EREXCOIND_DEFAULT_DATADIR="/var/lib/erexcoind"
+fi
+
+EREXCOIND_CONFIGFILE=${EREXCOIND_CONFIGFILE:-/etc/erexcoin/erexcoin.conf}
+EREXCOIND_PIDDIR=${EREXCOIND_PIDDIR:-/var/run/erexcoind}
+EREXCOIND_PIDFILE=${EREXCOIND_PIDFILE:-${EREXCOIND_PIDDIR}/erexcoind.pid}
+EREXCOIND_DATADIR=${EREXCOIND_DATADIR:-${EREXCOIND_DEFAULT_DATADIR}}
+EREXCOIND_USER=${EREXCOIND_USER:-${EREXCOIN_USER:-erexcoin}}
+EREXCOIND_GROUP=${EREXCOIND_GROUP:-erexcoin}
+EREXCOIND_BIN=${EREXCOIND_BIN:-/usr/bin/erexcoind}
+EREXCOIND_NICE=${EREXCOIND_NICE:-${NICELEVEL:-0}}
+EREXCOIND_OPTS="${EREXCOIND_OPTS:-${EREXCOIN_OPTS}}"
+
+name="ErexCoin Core Daemon"
+description="ErexCoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/erexcoind"
+command_args="-pid=\"${EREXCOIND_PIDFILE}\" \
+		-conf=\"${EREXCOIND_CONFIGFILE}\" \
+		-datadir=\"${EREXCOIND_DATADIR}\" \
+		-daemon \
+		${EREXCOIND_OPTS}"
+
+required_files="${EREXCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${EREXCOIND_USER} \
+			-N ${EREXCOIND_NICE} -w 2000"
+pidfile="${EREXCOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${EREXCOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${EREXCOIND_USER}:${EREXCOIND_GROUP}" \
+	"${EREXCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${EREXCOIND_USER}:${EREXCOIND_GROUP}" \
+	"${EREXCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o ${EREXCOIND_USER}:${EREXCOIND_GROUP} \
+	-m 0660 \
+	${EREXCOIND_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${EREXCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run erexcoind."
+		eerror "The setting must appear in ${EREXCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"ErexCoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

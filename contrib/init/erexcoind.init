@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  erexcoind The erexcoin core server.
+#
+#
+# chkconfig: 345 80 20
+# description: erexcoind
+# processname: erexcoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/erexcoind, see below
+if [ -f /etc/sysconfig/erexcoind ]; then
+        . /etc/sysconfig/erexcoind
+fi
+
+RETVAL=0
+
+prog=erexcoind
+# you can override the lockfile via EREXCOIND_LOCKFILE in /etc/sysconfig/erexcoind
+lockfile=${EREXCOIND_LOCKFILE-/var/lock/subsys/erexcoind}
+
+# erexcoind defaults to /usr/bin/erexcoind, override with EREXCOIND_BIN
+erexcoind=${EREXCOIND_BIN-/usr/bin/erexcoind}
+
+# erexcoind opts default to -disablewallet, override with EREXCOIND_OPTS
+erexcoind_opts=${EREXCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $erexcoind $erexcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
