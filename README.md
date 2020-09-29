@@ -30,6 +30,7 @@ https://0769.it
 Exchange
 ----------------
 BTC : https://erex.io/exchange/EREX/BTC/
+
 DOGE : https://erex.io/exchange/EREX/DOGE/
 
 What is ErexCoin ?
