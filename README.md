@@ -21,6 +21,11 @@ Total supply : 100.000.000
 
 Premine : 10%
 
+
+Mining pool
+----------------
+https://0769.it
+
 What is ErexCoin ?
 ----------------
 
