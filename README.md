@@ -26,6 +26,12 @@ Mining pool
 ----------------
 https://0769.it
 
+https://miner-world.com/
+
+Explorer
+----------------
+https://explorer.erex.io/
+
 
 Exchange
 ----------------
