@@ -30,6 +30,8 @@ https://miner-world.com/
 
 https://eurohash.eu/
 
+https://icopool.club
+
 Explorer
 ----------------
 https://explorer.erex.io/
