@@ -28,6 +28,8 @@ https://0769.it
 
 https://miner-world.com/
 
+https://eurohash.eu/
+
 Explorer
 ----------------
 https://explorer.erex.io/
