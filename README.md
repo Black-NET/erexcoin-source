@@ -60,7 +60,7 @@ We are preparing a lot for Erexcoin in order to satisfy our investors, those who
 
 Erexcoin is also the DNA of EREX all our external projects are made thanks to Erexcoin, planning to list Erexcoin with many partners.
 
-If you have any suggestions or comments, we remain at your disposal on twiiter @EREXio or on contact@erex.io
+If you have any suggestions or comments, we remain at your disposal on Twitter https://twitter.com/EREXio or on contact@erex.io
 
 License
 -------
