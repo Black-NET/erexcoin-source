@@ -1,6 +1,8 @@
 ErexCoin Core
 =====================================
 
+![GitHub Logo](https://i.imgur.com/fHxsMXq.png)
+
 https://erex.io/
 
 
@@ -50,6 +52,16 @@ ETH : https://erex.io/exchange/EREX/ETH/
 USDT : https://erex.io/exchange/EREX/USDT/
 
 More exchange soon ...
+
+Others links
+----------------
+
+Mining Pool Stats : https://miningpoolstats.stream/erexcoin
+
+New Reward Coins : https://newrewardcoins.com/coin/erex/
+
+Logo : https://pbs.twimg.com/media/EX29C2jXkAkp72N.png
+
 
 What is ErexCoin ?
 ----------------
