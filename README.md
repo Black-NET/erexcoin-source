@@ -59,6 +59,7 @@ New Reward Coins : https://newrewardcoins.com/coin/erex/
 
 Logo : https://pbs.twimg.com/media/EX29C2jXkAkp72N.png
 
+Bitcointalk : https://bitcointalk.org/index.php?topic=5280004
 
 What is ErexCoin ?
 ----------------
