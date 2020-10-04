@@ -45,6 +45,12 @@ BTC : https://erex.io/exchange/EREX/BTC/
 
 DOGE : https://erex.io/exchange/EREX/DOGE/
 
+ETH : https://erex.io/exchange/EREX/ETH/
+
+USDT : https://erex.io/exchange/EREX/USDT/
+
+More exchange soon ...
+
 What is ErexCoin ?
 ----------------
 
