@@ -1,10 +1,7 @@
-ErexCoin Core
+ErexCoin Core https://erex.io/
 =====================================
 
 ![GitHub Logo](https://i.imgur.com/fHxsMXq.png)
-
-https://erex.io/
-
 
 ErexCoin Specifications
 ----------------
