@@ -32,6 +32,8 @@ https://eurohash.eu/
 
 https://icopool.club
 
+https://gpuhot.com/
+
 Explorer
 ----------------
 https://explorer.erex.io/
