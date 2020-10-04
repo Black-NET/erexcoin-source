@@ -1,4 +1,4 @@
-ErexCoin Core integration/staging tree
+ErexCoin Core
 =====================================
 
 https://erex.io/
