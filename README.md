@@ -1,4 +1,4 @@
-ErexCoin Core https://erex.io/
+ErexCoin Pre-release Core https://erex.io/
 =====================================
 
 ![GitHub Logo](https://i.imgur.com/fHxsMXq.png)
