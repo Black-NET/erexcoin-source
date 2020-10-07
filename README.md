@@ -23,15 +23,20 @@ Premine : 10%
 
 Mining pool
 ----------------
-https://0769.it
+https://0769.it/
 
 https://miner-world.com/
 
 https://eurohash.eu/
 
-https://icopool.club
+https://icopool.club/
 
 https://gpuhot.com/
+
+https://nodepow.com/
+
+https://gameforxe.eu/
+
 
 Explorer
 ----------------
