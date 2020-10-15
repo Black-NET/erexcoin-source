@@ -16,9 +16,7 @@ Blocktime : 5 minutes
 
 Block Reward : 50 EREX
 
-Max supply : 100.000.000
-
-Premine : 10%
+Max supply : ≃ 15.000.000
 
 
 Mining pool
