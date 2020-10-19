@@ -1,3 +1,10 @@
+[![latest-release](https://img.shields.io/github/release/EREXio/erexcoin-source)](https://github.com/EREXio/erexcoin-source/releases)
+[![GitHub last-release](https://img.shields.io/github/release-date/EREXio/erexcoin-source)](https://github.com/EREXio/erexcoin-source/releases)
+[![GitHub downloads](https://img.shields.io/github/downloads/EREXio/erexcoin-source/total)](https://github.com/EREXio/erexcoin-source/releases)
+[![GitHub commits-since-last-version](https://img.shields.io/github/commits-since/EREXio/erexcoin-source/latest/master)](https://github.com/EREXio/erexcoin-source/graphs/commit-activity)
+[![GitHub commits-per-month](https://img.shields.io/github/commit-activity/m/EREXio/erexcoin-source)](https://github.com/EREXio/erexcoin-source/graphs/code-frequency)
+[![GitHub last-commit](https://img.shields.io/github/last-commit/EREXio/erexcoin-source)](https://github.com/EREXio/erexcoin-source/commits/master)
+
 ErexCoin Pre-release Core https://erex.io/
 =====================================
 
